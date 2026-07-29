@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=yes" />
+  <title>胡秀菊 · 用心陪伴每一个小天使</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --blush: #ffc4c8;
+      --rose: #e56b78;
+      --rose-deep: #d45566;
+      --peach: #fff0ee;
+      --cream: #fff8f6;
+      --milk: #ffffff;
+      --ink: #4a3f3f;
+      --soft: #8a7575;
+      --line: rgba(229, 107, 120, 0.14);
+      --nav-h: 62px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --shadow: 0 10px 28px rgba(212, 120, 130, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      background: #f3d5d5;
+      color: var(--ink);
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .app {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding-bottom: calc(var(--nav-h) + var(--safe-bottom) + 18px);
+      background:
+        radial-gradient(ellipse 120% 60% at 10% -10%, rgba(255, 196, 200, 0.55), transparent 55%),
+        radial-gradient(ellipse 90% 50% at 100% 20%, rgba(255, 220, 210, 0.5), transparent 50%),
+        linear-gradient(180deg, #fff6f4 0%, #ffe9e7 38%, #fff8f6 100%);
+      overflow-x: hidden;
+    }
+
+    .bloom {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(28px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+      animation: drift 10s ease-in-out infinite;
+    }
+
+    .bloom-1 {
+      width: 160px;
+      height: 160px;
+      background: #ffb7be;
+      top: 18%;
+      left: -40px;
+    }
+
+    .bloom-2 {
+      width: 120px;
+      height: 120px;
+      background: #ffd0b8;
+      top: 48%;
+      right: -30px;
+      animation-delay: -3s;
+    }
+
+    .bloom-3 {
+      width: 90px;
+      height: 90px;
+      background: #ffc9d8;
+      bottom: 22%;
+      left: 20%;
+      animation-delay: -6s;
+    }
+
+    @keyframes drift {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-14px) scale(1.06);
+      }
+    }
+
+    .page {
+      display: none;
+      position: relative;
+      z-index: 1;
+      animation: rise 0.45s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 顶部英雄区 */
+    .hero {
+      position: relative;
+      padding: 0 0 8px;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #2a1f1f;
+    }
+
+    .video-wrap::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 42%;
+      background: linear-gradient(transparent, rgba(74, 40, 45, 0.45));
+      pointer-events: none;
+    }
+
+    .video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-badge {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 2;
+      color: #fff;
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .profile-sheet {
+      margin: -28px 16px 0;
+      position: relative;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 22px 18px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 8px 20px rgba(229, 107, 120, 0.25);
+      animation: softPulse 3.2s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 20px rgba(229, 107, 120, 0.22);
+      }
+
+      50% {
+        box-shadow: 0 8px 28px rgba(229, 107, 120, 0.4);
+      }
+    }
+
+    .avatar-ring {
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(229, 107, 120, 0.35);
+      animation: musicSpin 18s linear infinite;
+    }
+
+    .profile-copy {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .profile-hello {
+      font-size: 12px;
+      color: var(--rose);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .profile-name {
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 30px;
+      color: #3d2f2f;
+      line-height: 1.1;
+      letter-spacing: 2px;
+    }
+
+    .profile-meta {
+      margin-top: 6px;
+      font-size: 12.5px;
+      color: var(--soft);
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .trust {
+      flex: 1;
+      text-align: center;
+      padding: 10px 4px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #fff7f6, #ffe8e6);
+    }
+
+    .trust strong {
+      display: block;
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 20px;
+      color: var(--rose-deep);
+      line-height: 1.2;
+    }
+
+    .trust span {
+      font-size: 11px;
+      color: var(--soft);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      color: #5a4848;
+      text-decoration: none;
+    }
+
+    .contact-item i {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--peach);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rose);
+      flex-shrink: 0;
+    }
+
+    .contact-item i svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .content {
+      padding: 18px 16px 8px;
+    }
+
+    .quote {
+      margin: 0 0 18px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 232, 230, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
+    }
+
+    .quote p {
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 17px;
+      color: #5a4040;
+      line-height: 1.7;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 10px;
+      font-family: "Noto Sans SC", sans-serif;
+      font-size: 12px;
+      color: var(--rose);
+    }
+
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 {
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 20px;
+      color: #3f3030;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .section-head em {
+      font-style: normal;
+      font-size: 11px;
+      color: var(--rose);
+      background: rgba(229, 107, 120, 0.1);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .story {
+      color: #5f4a4a;
+      font-size: 14.5px;
+      line-height: 1.85;
+    }
+
+    .story+.story {
+      margin-top: 10px;
+    }
+
+    .skill-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill:last-child {
+      border-bottom: none;
+    }
+
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #ffe6e4, #ffd2d0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .skill h3 {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #463636;
+      margin-bottom: 3px;
+    }
+
+    .skill p {
+      font-size: 12.5px;
+      color: var(--soft);
+      line-height: 1.55;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(var(--blush), transparent);
+      border-radius: 2px;
+    }
+
+    .time-item {
+      position: relative;
+      padding: 0 0 16px 12px;
+    }
+
+    .time-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .time-item::before {
+      content: "";
+      position: absolute;
+      left: -16px;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--rose);
+      box-shadow: 0 0 0 4px rgba(229, 107, 120, 0.18);
+    }
+
+    .time-item strong {
+      display: block;
+      font-size: 13px;
+      color: var(--rose-deep);
+      margin-bottom: 4px;
+    }
+
+    .time-item p {
+      font-size: 13.5px;
+      color: #5f4a4a;
+      line-height: 1.65;
+    }
+
+    .call-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 8px 0 6px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 15px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f08a92, #e05668);
+      box-shadow: 0 12px 24px rgba(224, 86, 104, 0.32);
+      animation: breathe 2.8s ease-in-out infinite;
+    }
+
+    .call-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @keyframes breathe {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 12px 24px rgba(224, 86, 104, 0.28);
+      }
+
+      50% {
+        transform: scale(1.015);
+        box-shadow: 0 14px 30px rgba(224, 86, 104, 0.4);
+      }
+    }
+
+    .call-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--soft);
+      margin-bottom: 8px;
+    }
+
+    /* 照片墙 */
+    .photos-page {
+      padding: 20px 16px 8px;
+    }
+
+    .photos-intro {
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #3f3030;
+    }
+
+    .photos-sub {
+      font-size: 13px;
+      color: var(--soft);
+      margin-bottom: 16px;
+    }
+
+    .gallery {
+      columns: 2;
+      column-gap: 10px;
+    }
+
+    .gallery figure {
+      break-inside: avoid;
+      margin: 0 0 10px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f3d7d7;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(180, 110, 120, 0.12);
+    }
+
+    .gallery figure:nth-child(3n) {
+      aspect-ratio: 3 / 4;
+    }
+
+    .gallery figure:nth-child(3n+1) {
+      aspect-ratio: 4 / 5;
+    }
+
+    .gallery figure:nth-child(3n+2) {
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery figure:active img {
+      transform: scale(1.04);
+    }
+
+    /* 底部导航 */
+    .tabbar {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      bottom: 0;
+      height: calc(var(--nav-h) + var(--safe-bottom));
+      padding: 6px 24px var(--safe-bottom);
+      background: rgba(255, 252, 251, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(229, 107, 120, 0.12);
+      display: flex;
+      z-index: 100;
+    }
+
+    .tab {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      border: none;
+      background: transparent;
+      color: #b59a9a;
+      font-size: 11px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+
+    .tab.active {
+      color: var(--rose-deep);
+    }
+
+    .tab svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* 灯箱 */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(40, 24, 28, 0.94);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 14px;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      color: #fff;
+      font-size: 32px;
+      background: none;
+      border: none;
+      line-height: 1;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* 音乐按钮 */
+    .bgmusic-btn {
+      position: fixed;
+      right: 14px;
+      top: 14px;
+      z-index: 999900;
+      width: 38px;
+      height: 38px;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.85);
+      background-image: url("assets/audio.png");
+      background-repeat: no-repeat;
+      background-size: 26px 52px;
+      background-position: 6px 6px;
+      box-shadow: 0 6px 16px rgba(180, 90, 100, 0.22);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .bgmusic-btn.playing {
+      background-position: 6px 6px;
+      animation: musicSpin 1.2s linear infinite;
+    }
+
+    .bgmusic-btn.paused {
+      background-position: 6px -20px;
+      animation: none;
+    }
+
+    @keyframes musicSpin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .music-tip {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <div class="bloom bloom-1" aria-hidden="true"></div>
+    <div class="bloom bloom-2" aria-hidden="true"></div>
+    <div class="bloom bloom-3" aria-hidden="true"></div>
+
+    <section id="page-about" class="page active">
+      <div class="hero">
+        <div class="video-wrap">
+          <video src="imgs/intro.mp4" poster="imgs/p01.jpg" controls playsinline preload="metadata"></video>
+          <div class="hero-badge">用心守护 · 温柔陪伴</div>
+        </div>
+
+        <div class="profile-sheet">
+          <div class="profile-top">
+            <div class="avatar-wrap">
+              <span class="avatar-ring" aria-hidden="true"></span>
+              <img class="avatar" src="assets/avatar.png" alt="胡秀菊" />
+            </div>
+            <div class="profile-copy">
+              <div class="profile-hello">您好，我是月嫂</div>
+              <h1 class="profile-name">胡秀菊</h1>
+              <div class="profile-meta">河南鹤壁 · 53岁 · 8年经验</div>
+            </div>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust"><strong>100+</strong><span>带过宝宝</span></div>
+            <div class="trust"><strong>8年+</strong><span>照护经验</span></div>
+            <div class="trust"><strong>住家</strong><span>全心陪伴</span></div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-item">
+              <i>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21s-7-4.5-7-11a7 7 0 1 1 14 0c0 6.5-7 11-7 11z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </i>
+              河南省鹤壁市
+            </div>
+            <a class="contact-item" href="tel:13783020358">
+              <i>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z" />
+                </svg>
+              </i>
+              13783020358
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="quote">
+          <p>特别喜欢宝宝，每个宝宝都是我的心肝宝贝。有爱心，有责任心，有耐心。</p>
+          <small>—— 想把温柔，留给每一个小天使</small>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>陪伴故事</h2>
+            <em>关于我</em>
+          </div>
+          <p class="story">
+            好学习，引导开发宝宝智力。催乳手法好，擅长月子餐；以前在单位服务领导，有高级厨师证，擅长做小孩子衣服。
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>照护时光</h2>
+            <em>工作经历</em>
+          </div>
+          <div class="timeline">
+            <div class="time-item">
+              <strong>2010 — 2012</strong>
+              <p>带 1 到 12 个月的宝宝，陪着小宝贝一点点长大。</p>
+            </div>
+            <div class="time-item">
+              <strong>2012 — 2018</strong>
+              <p>专注 0〜3 个月新生儿照护，细心呵护每一个小生命。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>温暖技能</h2>
+            <em>我能做什么</em>
+          </div>
+          <div class="skill-flow">
+            <div class="skill">
+              <div class="skill-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#d45566" stroke-width="1.8">
+                  <path
+                    d="M9 3.8c0-.4.3-.8.8-.8h4.4c.4 0 .8.3.8.8V5l1.6 3.2c.1.3.2.6.2.9V19a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9.1c0-.3.1-.6.2-.9L9 5V3.8z" />
+                  <path d="M10.2 11.2h3.6M10.2 14.2h2.6" />
+                </svg>
+              </div>
+              <div>
+                <h3>催乳通乳</h3>
+                <p>手法温柔专业，帮助宝妈顺利亲喂</p>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#d45566" stroke-width="1.8">
+                  <path d="M4 11h16l-1.2 8.2A2 2 0 0 1 16.8 21H7.2a2 2 0 0 1-2-1.8L4 11z" />
+                  <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                  <path d="M12 15v3" />
+                </svg>
+              </div>
+              <div>
+                <h3>月子餐 · 高级厨师证</h3>
+                <p>营养搭配用心，做出宝妈爱喝的月子汤</p>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#d45566" stroke-width="1.8">
+                  <path d="M4 7h10l6 5-6 5H4V7z" />
+                  <path d="M9 10v4M13 10.5v3" />
+                </svg>
+              </div>
+              <div>
+                <h3>童装缝制 · 早教启蒙</h3>
+                <p>会做小孩子衣服，也会引导开发宝宝智力</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="call-btn" href="tel:13783020358">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path
+              d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z" />
+          </svg>
+          想了解更多，打个电话聊聊
+        </a>
+        <p class="call-note">愿每一位宝妈，都被温柔以待</p>
+      </div>
+    </section>
+
+    <section id="page-photos" class="page photos-page">
+      <h2 class="photos-intro">照片墙</h2>
+      <p class="photos-sub">真实日常 · 与宝宝相处的温暖瞬间</p>
+      <div class="gallery" id="gallery"></div>
+    </section>
+  </div>
+
+  <nav class="tabbar">
+    <button class="tab active" type="button" data-page="about" aria-label="关于我">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path
+          d="M9 3.8c0-.4.3-.8.8-.8h4.4c.4 0 .8.3.8.8V5l1.6 3.2c.1.3.2.6.2.9V19a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9.1c0-.3.1-.6.2-.9L9 5V3.8z" />
+        <path d="M10.2 11.2h3.6M10.2 14.2h2.6" />
+        <path d="M15.2 3.2c1-.8 2.5-.3 2.8 1 .2.7 0 1.3-.5 1.8" />
+        <circle cx="17.6" cy="2.6" r="1" fill="currentColor" stroke="none" />
+      </svg>
+      <span>关于我</span>
+    </button>
+    <button class="tab" type="button" data-page="photos" aria-label="照片墙">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="16" rx="2.5" />
+        <circle cx="8.5" cy="9.5" r="1.5" />
+        <path d="M21 15.5l-5.2-5.2a1.2 1.2 0 0 0-1.7 0L6 18" />
+      </svg>
+      <span>照片墙</span>
+    </button>
+  </nav>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" type="button" aria-label="关闭">&times;</button>
+    <img id="lightbox-img" src="" alt="预览" />
+  </div>
+
+  <audio id="bgmusic" loop preload="auto" autoplay playsinline src="assets/happy.mp3"></audio>
+  <button type="button" id="bgmusic-btn" class="bgmusic-btn playing" aria-label="播放/暂停背景音乐" title="幸福拍手歌"></button>
+  <div id="music-tip" class="music-tip" aria-hidden="true"></div>
+
+  <script>
+    const photoFiles = [
+      "p01.jpg", "p02.jpg", "p03.jpg", "p04.jpg", "p05.jpg",
+      "p06.jpg", "p07.jpg", "p08.jpg", "p09.jpg", "p10.jpg",
+      "p11.jpg", "p12.jpg", "p13.jpg", "p14.jpg", "p15.jpg",
+      "p16.jpg", "p17.jpg", "p18.jpg", "p19.jpg", "p20.jpg"
+    ];
+
+    const gallery = document.getElementById("gallery");
+    photoFiles.forEach((file) => {
+      const src = "imgs/" + file;
+      const fig = document.createElement("figure");
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "温暖瞬间";
+      img.loading = "lazy";
+      img.dataset.full = src;
+      fig.appendChild(img);
+      gallery.appendChild(fig);
+    });
+
+    const tabs = document.querySelectorAll(".tab");
+    const pages = {
+      about: document.getElementById("page-about"),
+      photos: document.getElementById("page-photos"),
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const key = tab.dataset.page;
+        tabs.forEach((t) => t.classList.toggle("active", t === tab));
+        Object.entries(pages).forEach(([name, el]) => {
+          el.classList.toggle("active", name === key);
+        });
+        window.scrollTo({top: 0, behavior: "smooth"});
+      });
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    gallery.addEventListener("click", (e) => {
+      const img = e.target.closest("img[data-full]");
+      if (!img) return;
+      lightboxImg.src = img.dataset.full;
+      lightbox.classList.add("open");
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.classList.contains("lightbox-close")) {
+        lightbox.classList.remove("open");
+        lightboxImg.src = "";
+      }
+    });
+
+    const bgmusic = document.getElementById("bgmusic");
+    const musicBtn = document.getElementById("bgmusic-btn");
+    const musicTip = document.getElementById("music-tip");
+    let musicStarted = false;
+    let userPaused = false;
+
+    bgmusic.volume = 0.85;
+
+    function setMusicUI(playing) {
+      musicBtn.classList.toggle("playing", playing);
+      musicBtn.classList.toggle("paused", !playing);
+    }
+
+    function playMusic() {
+      bgmusic.muted = false;
+      // 播音乐时暂停视频，避免同时出声
+      if (introVideo && !introVideo.paused) {
+        introVideo.pause();
+      }
+      return bgmusic.play().then(() => {
+        musicStarted = true;
+        userPaused = false;
+        setMusicUI(true);
+        if (musicTip && musicTip.parentNode) musicTip.remove();
+      }).catch(() => setMusicUI(false));
+    }
+
+    function pauseMusic() {
+      bgmusic.pause();
+      userPaused = true;
+      setMusicUI(false);
+    }
+
+    function toggleMusic() {
+      if (bgmusic.paused) playMusic();
+      else pauseMusic();
+    }
+
+    musicBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (musicTip && musicTip.parentNode) musicTip.remove();
+      toggleMusic();
+    });
+
+    function unlockMusic() {
+      if (userPaused) return;
+      playMusic();
+      document.removeEventListener("touchstart", unlockMusic);
+      document.removeEventListener("touchend", unlockMusic);
+      document.removeEventListener("click", unlockMusic);
+    }
+    document.addEventListener("touchstart", unlockMusic, {passive: true});
+    document.addEventListener("touchend", unlockMusic, {passive: true});
+    document.addEventListener("click", unlockMusic);
+    if (musicTip) {
+      musicTip.addEventListener("touchstart", unlockMusic, {passive: true});
+      musicTip.addEventListener("click", unlockMusic);
+    }
+
+    // 视频与音乐互斥：播视频停音乐，播音乐停视频
+    const introVideo = document.querySelector(".video-wrap video");
+
+    playMusic();
+    setTimeout(playMusic, 300);
+    setTimeout(playMusic, 800);
+
+    document.addEventListener("WeixinJSBridgeReady", playMusic, false);
+    document.addEventListener("YixinJSBridgeReady", playMusic, false);
+    if (typeof WeixinJSBridge !== "undefined") {
+      try {WeixinJSBridge.invoke("getNetworkType", {}, playMusic);} catch (e) { }
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && musicStarted && !userPaused && bgmusic.paused) {
+        if (!introVideo || introVideo.paused) playMusic();
+      }
+    });
+
+    if (introVideo) {
+      introVideo.addEventListener("play", () => {
+        if (!bgmusic.paused) {
+          bgmusic.pause();
+          setMusicUI(false);
+        }
+      });
+      introVideo.addEventListener("pause", () => {
+        if (musicStarted && !userPaused) playMusic();
+      });
+      introVideo.addEventListener("ended", () => {
+        if (musicStarted && !userPaused) playMusic();
+      });
+    }
+  </script>
+</body>
+
+</html>

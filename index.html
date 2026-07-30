@@ -6,7 +6,62 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=yes" />
-  <title>胡秀菊 · 用心陪伴每一个小天使</title>
+
+  <script>
+    window.__SHARE__ = {
+      siteUrl: "https://13783020358.pages.dev",
+      title: "金牌月嫂胡秀菊,用心为您服务!",
+      desc: "河南鹤壁 | 53岁 | 10年+经验",
+      imagePath: "imgs/p13.jpg"
+    };
+  </script>
+  <title>金牌月嫂胡秀菊,用心为您服务!</title>
+  <meta name="description" content="河南鹤壁 | 53岁 | 10年+经验" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="金牌月嫂胡秀菊,用心为您服务!" />
+  <meta property="og:description" content="河南鹤壁 | 53岁 | 10年+经验" />
+  <meta property="og:url" content="https://13783020358.pages.dev/" />
+  <meta property="og:image" content="https://13783020358.pages.dev/imgs/p13.jpg" />
+  <meta property="og:image:width" content="480" />
+  <meta property="og:image:height" content="480" />
+  <meta itemprop="name" content="金牌月嫂胡秀菊,用心为您服务!" />
+  <meta itemprop="description" content="河南鹤壁 | 53岁 | 10年+经验" />
+  <meta itemprop="image" content="https://13783020358.pages.dev/imgs/p13.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="金牌月嫂胡秀菊,用心为您服务!" />
+  <meta name="twitter:description" content="河南鹤壁 | 53岁 | 10年+经验" />
+  <meta name="twitter:image" content="https://13783020358.pages.dev/imgs/p13.jpg" />
+  <link rel="icon" href="https://13783020358.pages.dev/imgs/p13.jpg" />
+  <link rel="apple-touch-icon" href="https://13783020358.pages.dev/imgs/p13.jpg" />
+  <script>
+    (function () {
+      var s = window.__SHARE__ || {};
+      var base = (s.siteUrl || "").replace(/\/$/, "");
+      if (!base && typeof location !== "undefined") {
+        base = location.origin + location.pathname.replace(/\/?(index\.html)?$/, "");
+      }
+      if (!base) return;
+      var img = base + "/" + String(s.imagePath || "assets/avatar.png").replace(/^\//, "");
+      var title = s.title || document.title;
+      var desc = s.desc || "";
+      function setMeta(sel, content) {
+        var el = document.querySelector(sel);
+        if (el) el.setAttribute("content", content);
+      }
+      document.title = title;
+      setMeta('meta[name="description"]', desc);
+      setMeta('meta[property="og:title"]', title);
+      setMeta('meta[property="og:description"]', desc);
+      setMeta('meta[property="og:url"]', base + "/");
+      setMeta('meta[property="og:image"]', img);
+      setMeta('meta[itemprop="name"]', title);
+      setMeta('meta[itemprop="description"]', desc);
+      setMeta('meta[itemprop="image"]', img);
+      setMeta('meta[name="twitter:title"]', title);
+      setMeta('meta[name="twitter:description"]', desc);
+      setMeta('meta[name="twitter:image"]', img);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -33,6 +88,17 @@
       margin: 0;
       padding: 0;
       -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 微信分享抓取用缩略图：移出可视区，仍可被爬虫读取 */
+    .wx-share-thumb {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+      pointer-events: none;
     }
 
     html,
@@ -705,6 +771,8 @@
 </head>
 
 <body>
+  <!-- 供微信抓取分享缩略图（勿删） -->
+  <img class="wx-share-thumb" src="imgs/p13.jpg" alt="胡秀菊" width="300" height="300" />
   <div class="app">
     <div class="bloom bloom-1" aria-hidden="true"></div>
     <div class="bloom bloom-2" aria-hidden="true"></div>
@@ -726,13 +794,13 @@
             <div class="profile-copy">
               <div class="profile-hello">您好，我是月嫂</div>
               <h1 class="profile-name">胡秀菊</h1>
-              <div class="profile-meta">河南鹤壁 · 53岁 · 8年经验</div>
+              <div class="profile-meta">河南鹤壁 · 53岁 · 10年+经验</div>
             </div>
           </div>
 
           <div class="trust-row">
             <div class="trust"><strong>100+</strong><span>带过宝宝</span></div>
-            <div class="trust"><strong>8年+</strong><span>照护经验</span></div>
+            <div class="trust"><strong>10年+</strong><span>照护经验</span></div>
             <div class="trust"><strong>住家</strong><span>全心陪伴</span></div>
           </div>
 
